@@ -1,0 +1,6 @@
+/vendor
+/files/*
+/logs
+.idea
+/src/Commons/Configuration.php
+/composer.phar

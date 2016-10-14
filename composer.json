@@ -1,0 +1,21 @@
+{
+    "name": "auret/bridge",
+    "description": "Bridge project for the project Almacenes of the company Alcruz Canarias SL",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Nauzet Plasencia",
+            "email": "nplasencia@auret.es"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.21",
+        "nesbot/carbon": "^1.21"
+    },
+    "autoload": {
+        "files": ["src/Helpers/helpers.php"],
+        "psr-4": {
+            "Bridge\\": "src/"
+        }
+    }
+}
