@@ -15,8 +15,10 @@ class CSVReader
 		$this->logger         = $logger;
 	}
 
-	public function read(array $almacenes = null)
+	public function read(array $stores = null)
 	{
+		$this->logger->writeInfo( "Starting to read file {$this->file}" );
+
 		$csv = utf8_encode(file_get_contents($this->file, FILE_USE_INCLUDE_PATH));
 		$lines = explode("\n", $csv);
 
@@ -28,8 +30,8 @@ class CSVReader
 		foreach ($lines as $line) {
 			$row = str_getcsv( $line, $this->fieldSeparator );
 			if (sizeof( $head ) == sizeof( $row )) {
-				if ($almacenes != null) {
-					$row[0] = $almacenes[$row[0]];
+				if ($stores != null) {
+					$row[0] = $stores[$row[0]];
 				}
 				$data[] = array_combine( $head, $row );
 			} else {
@@ -37,6 +39,8 @@ class CSVReader
 			}
 			$i++;
 		}
+
+		$this->logger->writeInfo( "End of read file {$this->file}" );
 
 		return $data;
 	}

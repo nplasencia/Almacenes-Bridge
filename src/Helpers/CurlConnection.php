@@ -27,7 +27,8 @@ class CurlConnection
 		curl_setopt($this->curl, CURLOPT_POSTFIELDS, $contentJson);
 		curl_setopt($this->curl, CURLOPT_HTTPHEADER, array(
 				'Content-Type: application/json',
-				'Content-Length: ' . strlen($contentJson))
+				'Content-Length: ' . strlen($contentJson),
+				'ws-key: $2y$10$US6nmmNwy8sp0zKWN45JGOiLVmMjnxk7aiUriEb95x5iLMZbJu8P.',)
 		);
 
 		$json_response = curl_exec($this->curl);

@@ -17,6 +17,6 @@ class Logger extends MonoLogger
 	public function writeInfo ( $message )
 	{
 		parent::addInfo( $message );
-		echo Carbon::now()." - INFO - $message.<br>";
+		echo Carbon::now()." - INFO - $message.".PHP_EOL;
 	}
 }
