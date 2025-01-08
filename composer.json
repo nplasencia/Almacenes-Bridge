@@ -10,7 +10,7 @@
     ],
     "require": {
         "monolog/monolog": "^1.21",
-        "nesbot/carbon": "^1.21"
+        "nesbot/carbon": "^2.72"
     },
     "autoload": {
         "files": ["src/Helpers/helpers.php"],
